@@ -31,9 +31,20 @@ describe("HeroesComponent", () => {
 
       component.delete(HEROES[2]);
 
-      const deletedHero = component.heroes.find(h => h.name === HEROES[2].name);
-      expect(component.heroes.length).toBe(2);      
+      const deletedHero = component.heroes.find(
+        (h) => h.name === HEROES[2].name
+      );
+      expect(component.heroes.length).toBe(2);
       expect(deletedHero).toBeUndefined();
     });
+
+    it("should call deleteHero with correct value", () => {
+      mockHeroService.deleteHero.and.returnValue(of(true)); // return simplest observable as heroeService doesn't care what is in the observable
+      component.heroes = HEROES;
+      
+      component.delete(HEROES[2]);
+
+      expect(mockHeroService.deleteHero).toHaveBeenCalledOnceWith(HEROES[2]);
+    });    
   });
 });
