@@ -24,7 +24,7 @@ describe('HeroComponent (shallow tests)', () => {
     fixture.componentInstance.hero = { id: 1, name: 'SuperDude', strength: 3 }; // simulate the input variable being set
     fixture.detectChanges();
 
-    let debugElementAnchorTag = fixture.debugElement.query(By.css('a'));
+    const debugElementAnchorTag = fixture.debugElement.query(By.css('a'));
     expect(debugElementAnchorTag.nativeElement.textContent).toContain('SuperDude');
 
     // expect(fixture.nativeElement.querySelector('a').textContent).toContain('SuperDude');
