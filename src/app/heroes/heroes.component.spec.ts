@@ -25,7 +25,8 @@ describe('HeroesComponent', () => {
 
   describe('delete', () => {
     it('should remove the indicated hero from the heroes list', () => {
-      mockHeroService.deleteHero.and.returnValue(of(true)); // return simplest observable as heroeService doesn't care what is in the observable
+      // return simplest observable as heroeService doesn't care what is in the observable
+      mockHeroService.deleteHero.and.returnValue(of(true));
       component.heroes = HEROES;
 
       component.delete(HEROES[2]);
@@ -38,7 +39,8 @@ describe('HeroesComponent', () => {
     });
 
     it('should call deleteHero with correct value', () => {
-      mockHeroService.deleteHero.and.returnValue(of(true)); // return simplest observable as heroeService doesn't care what is in the observable
+      // return simplest observable as heroeService doesn't care what is in the observable
+      mockHeroService.deleteHero.and.returnValue(of(true));
       component.heroes = HEROES;
 
       component.delete(HEROES[2]);

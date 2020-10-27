@@ -1,7 +1,6 @@
-import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
-import { of } from 'rxjs';
+import { of } from 'rxjs/internal/observable/of';
 import { Hero } from '../hero';
 import { HeroService } from '../hero.service';
 import { HeroesComponent } from './heroes.component';

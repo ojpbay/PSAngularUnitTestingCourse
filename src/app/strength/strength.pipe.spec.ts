@@ -1,19 +1,17 @@
-import { StrengthPipe } from "./strength.pipe";
+import { StrengthPipe } from './strength.pipe';
 
-describe("StrengthPipe", () => {
-  it("should display weak if strength is 5", () => {
-    let pipe = new StrengthPipe();
+describe('StrengthPipe', () => {
+  it('should display weak if strength is 5', () => {
+    const pipe = new StrengthPipe();
+    const val = pipe.transform(5);
 
-    let val = pipe.transform(5);
-
-    expect(val).toEqual("5 (weak)");
+    expect(val).toEqual('5 (weak)');
   });
 
-  it("should display strong if strength is 10", () => {
-    let pipe = new StrengthPipe();
+  it('should display strong if strength is 10', () => {
+    const pipe = new StrengthPipe();
+    const val = pipe.transform(10);
 
-    let val = pipe.transform(10);
-
-    expect(val).toEqual("10 (strong)");
+    expect(val).toEqual('10 (strong)');
   });
 });
