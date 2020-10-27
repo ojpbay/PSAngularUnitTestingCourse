@@ -25,7 +25,7 @@ describe('HeroesComponent (shallow tests)', () => {
       providers: [
         { provide: HeroService, useValue: mockHeroService }
       ],
-      schemas: [NO_ERRORS_SCHEMA]
+      // schemas: [NO_ERRORS_SCHEMA]
     });
 
     fixture = TestBed.createComponent(HeroesComponent);
@@ -36,5 +36,12 @@ describe('HeroesComponent (shallow tests)', () => {
     fixture.detectChanges(); // needed to fire ngOnInit
 
     expect(fixture.componentInstance.heroes.length).toBe(3);
+  });
+
+  it('should create one li for each hero', () => {
+    mockHeroService.getHeroes.and.returnValue(of(HEROES));
+    fixture.detectChanges(); // needed to fire ngOnInit
+
+    expect(fixture.debugElement.queryAll(By.css('li')).length).toBe(3);
   });
 });
